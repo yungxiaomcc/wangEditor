@@ -20,6 +20,7 @@ function genTableNode(rowNum: number, colNum: number): TableElement {
       const cellNode: TableCellElement = {
         type: 'table-cell',
         children: [{ text: '' }],
+        extra_info: '{}',
       }
       if (i === 0) {
         cellNode.isHeader = true // 第一行默认是 th
@@ -31,6 +32,7 @@ function genTableNode(rowNum: number, colNum: number): TableElement {
     rows.push({
       type: 'table-row',
       children: cells,
+      extra_info: '{}',
     })
   }
 
@@ -38,6 +40,7 @@ function genTableNode(rowNum: number, colNum: number): TableElement {
     type: 'table',
     width: 'auto',
     children: rows,
+    extra_info: '{}',
   }
 }
 

@@ -51,11 +51,12 @@ class InsertRow implements IButtonMenu {
     if (cellsLength === 0) return
 
     // 拼接新的 row
-    const newRow: TableRowElement = { type: 'table-row', children: [] }
+    const newRow: TableRowElement = { type: 'table-row', children: [], extra_info: '{}' }
     for (let i = 0; i < cellsLength; i++) {
       const cell: TableCellElement = {
         type: 'table-cell',
         children: [{ text: '' }],
+        extra_info: '{}',
       }
       newRow.children.push(cell)
     }
