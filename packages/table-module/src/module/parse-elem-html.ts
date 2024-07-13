@@ -38,6 +38,7 @@ function parseCellHtml(
     width,
     // @ts-ignore
     children,
+    extra_info: JSON.stringify(elem.attributes),
   }
 }
 
@@ -55,6 +56,7 @@ function parseRowHtml(
     type: 'table-row',
     // @ts-ignore
     children: children.filter(child => DomEditor.getNodeType(child) === 'table-cell'),
+    extra_info: JSON.stringify(elem.attributes),
   }
 }
 
@@ -80,6 +82,7 @@ function parseTableHtml(
     width,
     // @ts-ignore
     children: children.filter(child => DomEditor.getNodeType(child) === 'table-row'),
+    extra_info: JSON.stringify(elem.attributes),
   }
 }
 

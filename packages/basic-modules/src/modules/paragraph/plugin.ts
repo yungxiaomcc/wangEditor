@@ -34,7 +34,7 @@ function deleteHandler(newEditor: IDomEditor): boolean {
   })
   return true
 }
-
+// 插件的主要作用就是重写 editor的api，增加 对应 元素的特殊功能
 function withParagraph<T extends IDomEditor>(editor: T): T {
   const { deleteBackward, deleteForward, insertText, insertBreak } = editor
   const newEditor = editor

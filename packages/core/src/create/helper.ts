@@ -63,6 +63,7 @@ export function genDefaultContent() {
 }
 
 /**
+ * 从字符 解析到html的方法
  * html 字符串 -> content
  * @param editor editor
  * @param html html 字符串

@@ -14,15 +14,18 @@ export type TableCellElement = {
   rowSpan?: number
   width?: string // 只作用于第一行（尚未考虑单元格合并！）
   children: Text[]
+  extra_info: string
 }
 
 export type TableRowElement = {
   type: 'table-row'
   children: TableCellElement[]
+  extra_info: string
 }
 
 export type TableElement = {
   type: 'table'
   width: string
   children: TableRowElement[]
+  extra_info: string
 }

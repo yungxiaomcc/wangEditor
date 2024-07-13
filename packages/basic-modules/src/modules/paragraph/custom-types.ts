@@ -9,5 +9,6 @@ import { Text } from 'slate'
 
 export type ParagraphElement = {
   type: 'paragraph'
+  extra_info: string
   children: Text[]
 }
