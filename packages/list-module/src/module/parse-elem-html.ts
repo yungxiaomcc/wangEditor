@@ -8,6 +8,7 @@ import { Descendant, Text } from 'slate'
 import $, { DOMElement, getTagName } from '../utils/dom'
 import { IDomEditor } from '@wangeditor/core'
 import { ListItemElement } from './custom-types'
+import { getElementExtraInfo } from '../utils/ext'
 
 /**
  * 获取 ordered
@@ -64,6 +65,7 @@ function parseItemHtml(
     type: 'list-item',
     ordered,
     level,
+    extra_info: getElementExtraInfo(elem),
     // @ts-ignore
     children,
   }

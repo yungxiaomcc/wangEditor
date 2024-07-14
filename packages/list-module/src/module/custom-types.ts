@@ -11,5 +11,6 @@ export type ListItemElement = {
   type: 'list-item'
   ordered: boolean // 有序/无序
   level: number // 层级：0 1 2 ...
+  extra_info: string
   children: Text[]
 }

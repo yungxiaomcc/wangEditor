@@ -31,3 +31,11 @@
 
 render-elem.tsx  渲染元素到 编辑器中
 elem-to-html.ts 生成富文本html 方法
+
+## 使用方式
+1. yarn pack 所有模块
+2. 生成tgz包文件
+3. 目标工程安装包，
+4. 首先安装core
+5. 安装 组件包
+6. 安装editor组件 npm install --legacy-peer-deps wangeditor-editor-v5.2.1-alpha.1.tgz 
