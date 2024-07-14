@@ -5,6 +5,7 @@
 
 import { Descendant, Text } from 'slate'
 import $, { DOMElement } from '../../utils/dom'
+import { getElementExtraInfo } from '../../utils/ext'
 import { IDomEditor } from '@wangeditor/core'
 import {
   Header1Element,
@@ -30,6 +31,7 @@ function genParser<T>(level: number) {
 
     const headerNode = {
       type: `header${level}`,
+      extra_info: getElementExtraInfo(elem),
       children,
     } as unknown as T
 

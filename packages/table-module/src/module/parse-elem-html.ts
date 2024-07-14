@@ -7,6 +7,8 @@ import { Descendant, Text } from 'slate'
 import { IDomEditor, DomEditor } from '@wangeditor/core'
 import { TableCellElement, TableRowElement, TableElement } from './custom-types'
 import $, { getTagName, getStyleValue, DOMElement } from '../utils/dom'
+import { getElementExtraInfo } from '../utils/ext'
+
 
 function parseCellHtml(
   elem: DOMElement,
@@ -38,7 +40,7 @@ function parseCellHtml(
     width,
     // @ts-ignore
     children,
-    extra_info: JSON.stringify(elem.attributes),
+    extra_info: getElementExtraInfo(elem),
   }
 }
 
@@ -56,7 +58,7 @@ function parseRowHtml(
     type: 'table-row',
     // @ts-ignore
     children: children.filter(child => DomEditor.getNodeType(child) === 'table-cell'),
-    extra_info: JSON.stringify(elem.attributes),
+    extra_info: getElementExtraInfo(elem),
   }
 }
 
@@ -82,7 +84,7 @@ function parseTableHtml(
     width,
     // @ts-ignore
     children: children.filter(child => DomEditor.getNodeType(child) === 'table-row'),
-    extra_info: JSON.stringify(elem.attributes),
+    extra_info: getElementExtraInfo(elem),
   }
 }
 

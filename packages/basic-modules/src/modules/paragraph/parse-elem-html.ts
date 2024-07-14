@@ -7,6 +7,8 @@ import { Descendant, Text } from 'slate'
 import { IDomEditor } from '@wangeditor/core'
 import { ParagraphElement } from './custom-types'
 import $, { DOMElement } from '../../utils/dom'
+import { getElementExtraInfo } from '../../utils/ext'
+
 
 /**
  *
@@ -36,7 +38,7 @@ function parseParagraphHtml(
 
   return {
     type: 'paragraph',
-    extra_info: JSON.stringify(elem.attributes),
+    extra_info: getElementExtraInfo(elem),
     // @ts-ignore
     children,
   }

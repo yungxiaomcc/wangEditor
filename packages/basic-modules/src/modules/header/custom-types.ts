@@ -9,25 +9,30 @@ import { Text } from 'slate'
 
 export type Header1Element = {
   type: 'header1'
+  extra_info: string
   children: Text[]
 }
 
 export type Header2Element = {
   type: 'header2'
+  extra_info: string
   children: Text[]
 }
 
 export type Header3Element = {
   type: 'header3'
+  extra_info: string
   children: Text[]
 }
 
 export type Header4Element = {
   type: 'header4'
+  extra_info: string
   children: Text[]
 }
 
 export type Header5Element = {
   type: 'header5'
+  extra_info: string
   children: Text[]
 }

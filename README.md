@@ -24,7 +24,8 @@
 1. 使用 node < 17
 2. 修改yarn.lock 中的的 无法获取的包https地址
 3. lerna@7.0.0
-
+4. 安装依赖 时异常解决，yarn config set "strict-ssl" false -g
+![alt text](image.png)
 
 1. 对于一个标签，如何指导 使用那个 node来渲染
 
