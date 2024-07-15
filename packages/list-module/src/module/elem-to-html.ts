@@ -7,6 +7,7 @@ import { Element, Path, Editor } from 'slate'
 import { DomEditor } from '@wangeditor/core'
 import { ListItemElement } from './custom-types'
 import { ELEM_TO_EDITOR } from '../utils/maps'
+import { getExtraInfoPrefixTag } from '../utils/ext'
 
 /**
  * 当前 list-item 前面需要拼接几个 <ol> 或 <ul>
@@ -128,14 +129,14 @@ function elemToHtml(
   let startContainerStr = ''
   let endContainerStr = ''
 
-  const { ordered = false } = elem as ListItemElement
+  const { ordered = false, extra_info = '{}' } = elem as ListItemElement
   const containerTag = ordered ? 'ol' : 'ul'
 
   // 前面需要拼接几个 <ol> 或 <ul>
   const startContainerTagNumber = getStartContainerTagNumber(elem)
   if (startContainerTagNumber > 0) {
     for (let i = 0; i < startContainerTagNumber; i++) {
-      startContainerStr += `<${containerTag}>` // 记录 start container tag ，如 `<ul>`
+      startContainerStr += getExtraInfoPrefixTag(containerTag, extra_info) // 记录 start container tag ，如 `<ul>`
       CONTAINER_TAG_STACK.push(containerTag) // tag 压栈
     }
   }

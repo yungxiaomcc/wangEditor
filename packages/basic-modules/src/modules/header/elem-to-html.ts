@@ -5,9 +5,26 @@
 
 import { Element } from 'slate'
 
+import { Text } from 'slate'
+import { getExtraInfoPrefixTag } from '../../utils/ext'
+
+
+interface HeaderElmT {
+
+  type: string
+  extra_info: string
+  children: Text[]
+}
+
 function genToHtmlFn(level: number) {
+
   function headerToHtml(elem: Element, childrenHtml: string): string {
-    return `<h${level}>${childrenHtml}</h${level}>`
+
+
+    const { extra_info = '{}' } = elem as HeaderElmT
+    let tag_str = getExtraInfoPrefixTag(`h${level}`, extra_info)
+
+    return `${tag_str}> ${childrenHtml}</h${level}>`
   }
   return headerToHtml
 }

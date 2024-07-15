@@ -3,6 +3,23 @@
 
 
 
+/**
+ * 
+ * 
+ * 根据extra info 字符串内容 拼接 tag前部分内容
+*/
+export function getExtraInfoPrefixTag(elem_tag: string, extra_info_str: string) {
+
+  const extra_info_json = JSON.parse(extra_info_str)
+
+  let tag_str = `<${elem_tag}`
+  for (const [key, value] of Object.entries(extra_info_json)) {
+    tag_str += ` ${key}="${value}"`
+  }
+
+  return tag_str
+
+}
 
 
 
